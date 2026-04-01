@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-2 Bookmark Collector</title>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f4f4f4;
+}
+
+input {
+  padding: 8px;
+  margin: 5px;
+  width: 200px;
+}
+
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+     <h1>📌 My Bookmarks</h1>
+
+  <input type="text" id="siteName" placeholder="Website Name">
+  <input type="text" id="siteURL" placeholder="https://example.com">
+  <button id="saveBtn">Save Bookmark</button>
+
+  <ul id="bookmarkList"></ul>
+  <script src="script.js"></script>
+</body>
+</html>
