@@ -1,16 +1,25 @@
+
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 function displaytasks() {
-  let text = document.querySelector(".list");
+  let text = document.querySelector("#list1");
   text.innerHTML = "";
 
-  tasks.forEach((task, index) => {
-    let li = document.createElement("li");
+  let complete=document.querySelector("#list2")
+  complete.innerHTML=""
+
+  let pending=document.querySelector("#list3")
+  pending.innerHTML=""
+
+
+  function createElements(task,index){
+        let li = document.createElement("li");
     li.innerHTML = task.text;
 
     if (task.completed) {
       li.classList.add("completed");
     }
+   
 
     li.onclick = () => {
       tasks[index].completed = !tasks[index].completed;
@@ -28,7 +37,22 @@ function displaytasks() {
     };
 
     li.appendChild(delbtn);
-    text.appendChild(li);
+    return li
+  }
+
+
+  tasks.forEach((task, index) => {
+    let liAll=createElements(task,index)
+    text.appendChild(liAll)
+
+    let li2=createElements(task,index)
+    if(task.completed){
+      complete.appendChild(li2)
+    }
+    else{
+      pending.appendChild(li2)
+    }
+
   });
 }
 
@@ -48,4 +72,16 @@ function updateStorage() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
+
+function showlist(listId){
+  let z=document.querySelectorAll(".list")
+
+  z.forEach((listitem)=>{
+    listitem.classList.add("hidden")
+  })
+
+  document.getElementById(listId).classList.remove("hidden")
+}
 displaytasks();
+
+window.onload = () => showlist("list1");

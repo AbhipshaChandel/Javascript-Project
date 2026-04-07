@@ -11,8 +11,12 @@
         <h2>Tasks to be completed</h2>
             <input class="text" type="text" placeholder="Add a task">
             <button class="btn">Save</button>
-        
-        <ul class="list"></ul>
+        <button onclick="showlist('list1')">All</button>
+        <button onclick="showlist('list2')">Completed</button>
+        <button onclick="showlist('list3')">Pending</button>
+        <ul id="list1" class="list "></ul>
+        <ul id="list2" class=" list hidden"></ul>
+        <ul id="list3" class=" list hidden"></ul>
     </div>
     <script src="script.js"></script>
 </body>

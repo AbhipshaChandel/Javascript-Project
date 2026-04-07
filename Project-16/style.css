@@ -23,6 +23,7 @@ button {
     background: blue;
     color: white;
     border: none;
+    margin: 10px 5px;
 }
 
 ul{
@@ -37,9 +38,27 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
+}
+
+li:hover {
+    background: #ddd;
+}
+
+li button:hover {
+    background: darkred;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid blue;
 }
 
 .completed {
     text-decoration: line-through;
     color: gray;
+}
+
+.hidden {
+    display: none;
 }
