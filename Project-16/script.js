@@ -27,6 +27,7 @@ function displaytasks() {
       displaytasks();
     };
 
+
     let delbtn = document.createElement("button");
     delbtn.innerHTML = "X";
     delbtn.onclick = (e) => {
@@ -36,7 +37,23 @@ function displaytasks() {
       displaytasks();
     };
 
-    li.appendChild(delbtn);
+
+    let edit=document.createElement("button")
+    edit.innerHTML="Edit"
+    edit.onclick=(e)=>{
+     e.stopPropagation()
+        let newtext=prompt("Enter new text",task.text)
+          if(newtext!==null || newtext.trim()!==""){
+            task.text=newtext
+            updateStorage()
+            displaytasks()
+          }
+         }
+
+    let btnContainer=document.createElement("div")
+    btnContainer.appendChild(edit)
+    btnContainer.appendChild(delbtn)
+    li.appendChild(btnContainer)
     return li
   }
 

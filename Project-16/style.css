@@ -41,12 +41,23 @@ li {
     gap: 10px;
 }
 
-li:hover {
-    background: #ddd;
+li div {
+    display: flex;
+    gap: 5px;
 }
 
-li button:hover {
-    background: darkred;
+li button {
+    padding: 5px 8px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+li button:first-child {
+    background: orange; 
+}
+
+li button:last-child {
+    background: red;
 }
 
 input:focus {
