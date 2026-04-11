@@ -6,11 +6,17 @@
     <title>Task Manager</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark">
+    <div class="tasksLeft"></div>
+    <button class="mode" style="background-color: #717070; border-radius: 4px; position: absolute; right: 250px; top: 0px; margin: 0px;">MODE</button>
     <div class="container">
         <h2>Tasks to be completed</h2>
+        <div class="inputcontainer">
             <input class="text" type="text" placeholder="Add a task">
+            <input type="date" class="deadline">
             <button class="btn">Save</button>
+        </div>
+
         <button onclick="showlist('list1')">All</button>
         <button onclick="showlist('list2')">Completed</button>
         <button onclick="showlist('list3')">Pending</button>

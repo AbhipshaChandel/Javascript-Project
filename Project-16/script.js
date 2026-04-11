@@ -1,6 +1,7 @@
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
+
 function displaytasks() {
   let text = document.querySelector("#list1");
   text.innerHTML = "";
@@ -14,7 +15,7 @@ function displaytasks() {
 
   function createElements(task,index){
         let li = document.createElement("li");
-    li.innerHTML = task.text;
+    li.innerHTML = task.text+" (Due:"+task.Deadline+")";
 
     if (task.completed) {
       li.classList.add("completed");
@@ -57,30 +58,37 @@ function displaytasks() {
     return li
   }
 
-
+  let c=0;
+  let p=0;
   tasks.forEach((task, index) => {
     let liAll=createElements(task,index)
     text.appendChild(liAll)
 
     let li2=createElements(task,index)
     if(task.completed){
+      c++
       complete.appendChild(li2)
     }
     else{
       pending.appendChild(li2)
+      p++
     }
 
   });
+
+  document.querySelector(".tasksLeft").innerHTML=`Total:${tasks.length} | Completed:${c} | Pending:${p}`
 }
 
 document.querySelector(".btn").addEventListener("click", function () {
   let x = document.querySelector(".text").value;
-  if (x === "") {
-    alert("Add a task");
+  let y=document.querySelector(".deadline").value;
+  if (x === "" || y==="") {
+    alert("Add both task and due date");
     return
   }
-  tasks.push({ text: x, completed: false });
+  tasks.push({ text: x,Deadline:y, completed: false });
   document.querySelector(".text").value=""
+  document.querySelector(".deadline").value=""
   updateStorage();
   displaytasks();
 });
@@ -99,6 +107,12 @@ function showlist(listId){
 
   document.getElementById(listId).classList.remove("hidden")
 }
+
+document.querySelector(".mode").addEventListener("click",()=>{
+ document.querySelector("body").classList.toggle("dark")
+})
+
+
 displaytasks();
 
 window.onload = () => showlist("list1");
