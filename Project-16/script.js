@@ -14,7 +14,7 @@ function displaytasks() {
 
 
   function createElements(task,index){
-        let li = document.createElement("li");
+    let li = document.createElement("li");
     li.innerHTML = task.text+" (Due:"+task.Deadline+")";
 
     if (task.completed) {

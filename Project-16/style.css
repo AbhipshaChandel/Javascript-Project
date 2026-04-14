@@ -1,6 +1,6 @@
 body {
     font-family: Arial;
-    background: #686868;
+    background: #728788;
     text-align: center;
     position: relative;
 }
@@ -45,9 +45,18 @@ button {
     margin: 10px 5px;
 }
 
+button:hover{
+  transform: scale(1.02);
+}
+
+button:focus{
+    background-color: rgba(6, 4, 116, 0.844);
+}
+
 ul{
     padding: 0px;
 }
+
 li {
     list-style: none;
     margin: 10px auto;
