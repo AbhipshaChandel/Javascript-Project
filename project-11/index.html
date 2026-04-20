@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project-11 Tell a joke</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #024e40, #83aa99);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box {
+        height: 300px;
+        width: 400px;
+        justify-items: center;
+        background: #034f3b;
+        border-radius: 20px;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+      }
+      .box h1 {
+        text-align: center;
+        font-size: 40px;
+        color: #fff;
+      }
+      .box button {
+        border: none;
+        padding: 12px 20px;
+        font-size: 18px;
+        border-radius: 10px;
+        background: #ffb703;
+        box-shadow: 0 4px 0 #c78600;
+        transition: 0.2s;
+        cursor: pointer;
+      }
+      .box button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 7px 0 #c78600;
+      }
+      .box button:active {
+        transform: translateY(2px);
+        box-shadow: 0 2px 0 #c78600;
+      }
+      #joke {
+        padding-inline:20px ;
+        text-align: center;
+        color: aliceblue;
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h1>Tell a joke</h1>
+      <div><button class="btn">Click here</button></div>
+      <p id="joke"></p>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
