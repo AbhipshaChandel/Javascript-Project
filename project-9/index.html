@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project-9 Guess the number</title>
+    <style>
+      body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  height: 90vh;
+  align-items: center;
+}
+
+.game {
+    height: 200px;
+  background: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px gray;
+  
+}
+
+input, button {
+  padding: 10px;
+  margin: 10px;
+}
+
+.result{
+    font-size: 40px;
+}
+      
+    </style>
+</head>
+<body>
+    <div class="game">
+
+        <h1>Guess the Number</h1>
+        <p>Enter a number between 1 and 100</p>
+        <input class="input" type="number" placeholder="Enter a number">
+        <button class="Check">Check</button>
+        <p class="message"></p>
+    </div>
+        <script src="index.js"></script>
+
+    </body>
+</html>
