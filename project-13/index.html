@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project-13 To-do List</title>
+    <style>
+        body{
+            height: 90vh;
+            justify-items: center;
+            align-content: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e1e2f, #3a3a5f);
+        }
+        .container{
+            min-height: 150px; 
+            width: 500px;
+            border-radius: 12px;
+            background-color: black;
+            border: 2px solid black;
+            box-shadow: 0 0 12px rgb(0, 174, 255);
+            justify-items: center;
+            align-content: center;
+            text-align: center;
+        }
+        .write{
+            padding-block: 0px;
+            margin-block: 30px;
+            font-size: 40px;
+            color: white;
+        }
+        .input{
+            display: flex;
+            gap: 16px;
+            margin-block:10px;
+        }
+        .input input{
+            width: 320px;
+            height: 35px;
+            font-size: 17px;
+            
+        }
+        .tasks{
+            padding-inline: 10px;
+            padding-block: 20px;
+            font-size: 25px;
+        }
+        .done{
+            height: 42px;
+            width: 80px;
+            background-color: rgb(138, 131, 131);
+            color: black;
+            cursor: pointer;
+            border-radius: 12px;
+            box-shadow: 0 0 8px rgb(175, 162, 162);
+            transition: 0.2s;
+        }
+        .done:hover{
+            transform: scale(1.08);
+        }
+        .done:active{
+           transform:scale(1)    
+        }
+        ul {
+         list-style: none;
+         padding: 0;
+         margin-top: 15px;
+       }
+
+        li {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 8px;
+          margin-bottom: 8px;
+          background: #f2f2f2;
+          border-radius: 5px;
+          cursor: pointer;
+          width: 400px;
+          height: 20px;
+        }
+        .completed{
+            text-decoration: line-through;
+            color: rgb(112, 108, 108);
+            opacity: 0.6;
+        }
+        .delete_btn{
+            background-color: red;
+            height: 30px;
+            width: 30px;
+            font-size: large;
+            border: none;
+            color: white;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="write">MY TO_DO LIST</h1>
+        <div class="input">
+            <input class="inputs" placeholder="Add a task..."></input>
+            <button class="done"> DONE</button> 
+        </div>
+        <ul class="list"></ul>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
